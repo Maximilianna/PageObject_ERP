@@ -38,6 +38,7 @@ class SpglPage(BasePage):
         for now in li:
             if now.text == Unit:
                 now.click()
+                break
 
     # 新增商品输入采购价格
     def input_Purchase(self, purchase):
@@ -91,6 +92,7 @@ class SpglPage(BasePage):
         for now in li:
             if now.text == Status:
                 now.click()
+                break
 
     # 时间格式：yyyy-MM-dd HH-mm-ss
     # 查询商品选择创建时间
@@ -129,6 +131,7 @@ class SpglPage(BasePage):
         for now in li:
             if now.text == str(value) + "条/页":
                 now.click()
+                break
 
     # 点击指定页数按钮
     def click_pagination(self, value):
@@ -139,6 +142,7 @@ class SpglPage(BasePage):
         for now in li:
             if now.text == str(value):
                 now.click()
+                break
 
     # 点击上一页按钮
     def click_prev(self):
@@ -147,3 +151,25 @@ class SpglPage(BasePage):
     # 点击下一页按钮
     def click_next(self):
         self.click_element(type_next[0], type_next[1])
+
+    # 在分页栏点击快速向前
+    def click_pagination_prev(self):
+        current = self.find_element(type_pagination_current[0],
+                                    type_pagination_current[1])
+        ul = self.find_element(type_pagination[0],
+                               type_pagination[1]).find_element(By.XPATH, "ul")
+        li = ul.find_elements(type_pagination_li[0],
+                              type_pagination_li[1])
+        if int(current.text) > int(li[0].text) + 3:
+            li[1].click()
+
+    # 在分页栏点击快速向后
+    def click_pagination_next(self):
+        current = self.find_element(type_pagination_current[0],
+                                    type_pagination_current[1])
+        ul = self.find_element(type_pagination[0],
+                               type_pagination[1]).find_element(By.XPATH, "ul")
+        li = ul.find_elements(type_pagination_li[0],
+                              type_pagination_li[1])
+        if int(current.text) < int(li[-1].text) - 3:
+            li[7].click()
