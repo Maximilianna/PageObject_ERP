@@ -15,10 +15,13 @@ class SpglPage(BasePage):
         self.click_element(type_new[0],
                            type_new[1])
 
-    # 新增商品输入商品名
-    def input_Name(self, name):
-        self.input_element(type_add_name[0],
-                           type_add_name[1], name)
+    # 新增商品输入商品名 可变参数key：1：清空原本内容
+    def input_Name(self, name, *key):
+        e = self.find_element(type_add_name[0],
+                              type_add_name[1])
+        if len(key) != 0 and key[0] != 0:
+            e.clear()
+        e.send_keys(name)
 
     # 新增商品选择商品分类
     def input_Class(self, Class):
@@ -41,16 +44,21 @@ class SpglPage(BasePage):
                 now.click()
                 break
 
-    # 新增商品输入采购价格
-    def input_Purchase(self, purchase):
-        self.input_element(type_purchase[0],
-                           type_purchase[1],
-                           purchase)
+    # 新增商品输入采购价格 可变参数key：1：清空原本内容
+    def input_Purchase(self, purchase, *key):
+        e = self.find_element(type_purchase[0],
+                              type_purchase[1])
+        if len(key) != 0 and key[0] != 0:
+            e.clear()
+        e.send_keys(purchase)
 
-    # 新增商品输入销售价格
-    def input_Sale(self, sale):
-        self.input_element(type_sale[0],
-                           type_sale[1], sale)
+    # 新增商品输入销售价格 可变参数key：1：清空原本内容
+    def input_Sale(self, sale, *key):
+        e = self.find_element(type_sale[0],
+                              type_sale[1])
+        if len(key) != 0 and key[0] != 0:
+            e.clear()
+        e.send_keys(sale)
 
     # 新增商品上传图片
     def input_file(self, fileAdd):
@@ -180,7 +188,13 @@ class SpglPage(BasePage):
         editor = self.find_element(type_pagination_editor[0],
                                    type_pagination_editor[1])
         editor.clear()
-        if key != 0 and type(key) != tuple:
-            editor.sed_keys(value, Keys.ENTER)
-        elif key == 0 or type(key) == tuple:
+        if key[0] != 0:
+            editor.send_keys(value, Keys.ENTER)
+        elif key == 0 or len(key) == 0:
             editor.send_keys(value)
+
+    # 点击修改按钮
+    def click_data_modify(self, index):
+        self.click_element(type_data_modify_start[0],
+                           type_data_modify_start[1] + str(index)
+                           + type_data_modify_end[1])
