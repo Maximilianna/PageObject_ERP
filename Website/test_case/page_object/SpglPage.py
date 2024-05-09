@@ -1,5 +1,6 @@
 from Website.test_case.page_object.BasePage import BasePage
 from Website.test_case.page_element.Spgl import *
+from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 
@@ -133,10 +134,10 @@ class SpglPage(BasePage):
                 now.click()
                 break
 
-    # 点击指定页数按钮
+    # 在分页栏点击指定页数按钮
     def click_pagination(self, value):
         ul = self.find_element(type_pagination[0],
-                                type_pagination[1]).find_element(By.XPATH, "ul")
+                               type_pagination[1]).find_element(By.XPATH, "ul")
         li = ul.find_elements(type_pagination_li[0],
                               type_pagination_li[1])
         for now in li:
@@ -173,3 +174,13 @@ class SpglPage(BasePage):
                               type_pagination_li[1])
         if int(current.text) < int(li[-1].text) - 3:
             li[7].click()
+
+    # 通过跳转器进行页面跳转 可变参数*key：1：自动回车   0：不回车   默认回车
+    def input_pagination_editor(self, value, *key):
+        editor = self.find_element(type_pagination_editor[0],
+                                   type_pagination_editor[1])
+        editor.clear()
+        if key != 0 and type(key) != tuple:
+            editor.sed_keys(value, Keys.ENTER)
+        elif key == 0 or type(key) == tuple:
+            editor.send_keys(value)

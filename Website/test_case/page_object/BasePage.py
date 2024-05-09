@@ -8,17 +8,23 @@ class BasePage(object):
     def open(self, url):
         self.driver.get(url)
 
-    def find_element(self, type, name):
-        return self.driver.find_element(type, name)
+    def find_element(self, My_type, name):
+        return self.driver.find_element(My_type, name)
 
-    def find_elements(self, type, name):
-        return self.driver.find_elements(type, name)
+    def find_elements(self, My_type, name):
+        return self.driver.find_elements(My_type, name)
 
-    def click_element(self, type, name):
-        self.find_element(type, name).click()
+    def click_element(self, My_type, name):
+        self.find_element(My_type, name).click()
+    
+    def click_elements(self, My_type, name, index):
+        self.find_elements(My_type, name)[index].click()
 
-    def input_element(self, type, name, value):
-        self.find_element(type, name).send_keys(value)
+    def input_element(self, My_type, name, value):
+        self.find_element(My_type, name).send_keys(value)
+    
+    def input_elements(self, My_type, name, value, index):
+        self.find_elements(My_type, name)[index].send_keys(value)
 
-    def select_element(self, type, name, str):
-        Select(self.find_element(type, name)).select_by_visible_text(str)
+    def select_element(self, My_type, name, My_str):
+        Select(self.find_element(My_type, name)).select_by_visible_text(My_str)
