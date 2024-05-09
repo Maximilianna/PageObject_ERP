@@ -28,3 +28,9 @@ class BasePage(object):
 
     def select_element(self, My_type, name, My_str):
         Select(self.find_element(My_type, name)).select_by_visible_text(My_str)
+
+    def alert_accept(self):
+        self.driver.switch_to.alert.accept()
+
+    def alert_dismiss(self):
+        self.driver.switch_to.alert.dismiss()

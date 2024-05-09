@@ -48,3 +48,6 @@ type_pagination_current = [By.CSS_SELECTOR, ".number.active"]
 type_pagination_editor = [By.CSS_SELECTOR, ".el-pagination__editor > input"]
 type_data_modify_start = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[3]/div[4]/div[2]/table/tbody/tr["]
 type_data_modify_end = [By.XPATH, "]/td[13]/div/button[1]"]
+type_date_disable_open_start = [By.XPATH,
+                                "/html/body/div[1]/div/div[2]/section/div/div[3]/div[4]/div[2]/table/tbody/tr["]
+type_date_disable_open_end = [By.XPATH, "]/td[13]/div/button[2]"]

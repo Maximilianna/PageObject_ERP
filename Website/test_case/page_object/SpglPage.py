@@ -198,3 +198,17 @@ class SpglPage(BasePage):
         self.click_element(type_data_modify_start[0],
                            type_data_modify_start[1] + str(index)
                            + type_data_modify_end[1])
+
+    # 点击禁用或启用按钮
+    def click_disable_open(self, index):
+        self.click_element(type_date_disable_open_start[0],
+                           type_date_disable_open_start[1] + str(index)
+                           + type_date_disable_open_end[1])
+
+    # 确定禁用或启用
+    def click_disable_open_accept(self):
+        self.alert_accept()
+
+    # 取消禁用或启用
+    def click_disable_open_dismiss(self):
+        self.alert_dismiss()
