@@ -3,6 +3,9 @@ from Website.test_case.page_object.LoginPage import LoginPage
 from Website.test_case.page_object.SpglPage import SpglPage
 from time import sleep
 
+from Website.test_case.page_object.SpppPage import SpppPage
+
+
 class add_Test(TestMyUnit):
     def test_add_Test(self):
         loginpage = LoginPage(self.driver)
@@ -51,5 +54,7 @@ class add_Test(TestMyUnit):
         spglpage.click_disable_open_accept()
         sleep(3)
         spglpage.click_disable_open(2)
-        spglpage.click_disable_open_dismiss()
+        spglpage.click_disable_open_accept()
+        spppPage = SpppPage(self.driver)
+        spppPage.click_Sppp()
         sleep(3)
