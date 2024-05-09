@@ -1,5 +1,5 @@
-from Website.test_case.page_object.BasePage import BasePage
-from Website.test_case.page_element.Spgl import *
+from Website.page_object.BasePage import BasePage
+from Website.page_element.Spgl import *
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 

@@ -1,5 +1,5 @@
-from Website.test_case.page_object.BasePage import BasePage
-from Website.test_case.page_element.Login import *
+from Website.page_object.BasePage import BasePage
+from Website.page_element.Login import *
 
 
 class LoginPage(BasePage):
