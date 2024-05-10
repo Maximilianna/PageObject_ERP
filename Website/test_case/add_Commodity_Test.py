@@ -23,4 +23,5 @@ class add_Test(TestMyUnit):
         spglpage.input_Unit(Unit)
         spglpage.input_Purchase(Purchase)
         spglpage.input_Sale(Sale)
+        spglpage.click_SaveNew_button()
         sleep(3)

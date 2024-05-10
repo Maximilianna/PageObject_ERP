@@ -6,18 +6,18 @@ type_add_name = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(1) > .el-form-item__content > .el-col > .el-input > input"]
 type_add_class = [By.ID, "select_add_class_bug"]
 type_add_brand = [By.ID, "select_add_brand_bug"]
-type_unit = [By.XPATH, "/html/body/div[2]/div/div[2]/form/div[4]/div/div[1]/div/div/input"]
+type_unit = [By.CSS_SELECTOR, ".el-input.el-input--medium.el-input--suffix > input"]
 type_unit_ul = [By.CSS_SELECTOR,
-                "body > div:nth-child(10) > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul"]
+                ".v-modal+div > .el-scrollbar > .el-select-dropdown__wrap.el-scrollbar__wrap >.el-scrollbar__view.el-select-dropdown__list"]
 type_unit_li = [By.XPATH, "li"]
 type_purchase = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(5) > .el-form-item__content > .el-col > .el-input > input"]
 type_sale = [By.CSS_SELECTOR,
              ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(6) > .el-form-item__content > .el-col > .el-input > input"]
 type_file = [By.NAME, "file"]
-type_save = [By.XPATH, "/html/body/div[4]/div/div[3]/div/button[1]/span"]
-type_saveNew = [By.XPATH, "/html/body/div[4]/div/div[3]/div/button[2]/span"]
-type_cancel = [By.XPATH, "/html/body/div[2]/div/div[3]/div/button[3]/span"]
+type_save = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(1)"]
+type_saveNew = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(2)"]
+type_cancel = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(3)"]
 type_query_Name = [By.ID, "product_name"]
 type_query_class = [By.ID, "select_class_bug"]
 type_query_brand = [By.ID, "select_brand_bug"]
