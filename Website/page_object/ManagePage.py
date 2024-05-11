@@ -1,14 +1,14 @@
 from Website.page_object.BasePage import BasePage
-from Website.page_element.Spgl import *
+from Website.page_element.Manage import *
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 
-class SpglPage(BasePage):
+class Manage(BasePage):
     # 点击商品管理按钮
     def click_Spgl(self):
-        self.click_element(type_Spgl[0],
-                           type_Spgl[1])
+        self.click_element(type_Manage[0],
+                           type_Manage[1])
 
     # 点击新增按钮
     def click_new(self):

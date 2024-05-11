@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-type_Spgl = [By.LINK_TEXT, "商品管理"]
+type_Manage = [By.LINK_TEXT, "商品管理"]
 type_new = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[2]/div[3]/button"]
 type_add_name = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(1) > .el-form-item__content > .el-col > .el-input > input"]

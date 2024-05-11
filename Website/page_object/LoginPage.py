@@ -17,3 +17,11 @@ class LoginPage(BasePage):
     def click_login(self):
         self.click_element(type_button[0],
                            type_button[1])
+
+
+def Login(driver, username, password):
+    login_page = LoginPage(driver)
+    login_page.open("http://10.255.4.105:14753/login")
+    login_page.input_username(username)
+    login_page.input_password(password)
+    login_page.click_login()
