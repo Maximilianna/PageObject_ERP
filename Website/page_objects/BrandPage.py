@@ -25,3 +25,6 @@ class BrandPage(BasePage):
     # 新增商品品牌，点击取消按钮
     def click_cancel_brand(self):
         self.click_element(type_cancel_button[0], type_cancel_button[1])
+
+    def label_name(self):
+        return "商品品牌"
