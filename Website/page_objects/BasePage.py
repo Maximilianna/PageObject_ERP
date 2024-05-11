@@ -1,5 +1,7 @@
 from selenium.webdriver.support.select import Select
 from Website.page_elements.Base import *
+from time import sleep
+import traceback
 
 
 class BasePage(object):
@@ -52,3 +54,15 @@ class BasePage(object):
     # 需要继承类重写
     def label_name(self):
         return ""
+
+    def ul_input(self, str, input, ul):
+        self.click_element(input)
+        sleep(0.5)
+        ul = self.find_elements(ul)
+        try:
+            for now in ul:
+                if now.get_attribute("textContent") == str:
+                    now.click()
+                    break
+        except:
+            traceback.print_exc()

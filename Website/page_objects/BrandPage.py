@@ -34,16 +34,9 @@ class BrandPage(BasePage):
 
     # 查询商品品牌，输入商品状态
     def input_query_brand_status(self, brandStatus):
-        if brandStatus not in ["启用", "禁用"]:
-            print("状态输入错误")
-            return
-        self.click_element(type_query_brand_status)
-        sleep(0.5)
-        ul = self.find_elements(type_query_brand_ul)
-        for now in ul:
-            if now.get_attribute("textContent") == brandStatus:
-                now.click()
-                break
+        self.ul_input(brandStatus,
+                      type_query_brand_status,
+                      type_query_brand_ul)
 
     # 查询商品品牌，点击查询按钮
     def click_query_brand(self):

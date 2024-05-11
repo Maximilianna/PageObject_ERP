@@ -1,8 +1,8 @@
 import csv
 
-def get_data_csv():
+def get_data_csv(str):
     list = []
-    steam = open(f"..\\test_data\\add_Commodity_Test.csv")
+    steam = open(str)
     reader = csv.reader(steam)
     for row in reader:
         list.append(row)

@@ -7,9 +7,7 @@ type_add_name = [By.CSS_SELECTOR,
 type_add_class = [By.ID, "select_add_class_bug"]
 type_add_brand = [By.ID, "select_add_brand_bug"]
 type_unit = [By.CSS_SELECTOR, ".el-input.el-input--medium.el-input--suffix > input"]
-type_unit_ul = [By.CSS_SELECTOR,
-                ".v-modal+div > .el-scrollbar > .el-select-dropdown__wrap.el-scrollbar__wrap >.el-scrollbar__view.el-select-dropdown__list"]
-type_unit_li = [By.XPATH, "li"]
+type_unit_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_purchase = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(5) > .el-form-item__content > .el-col > .el-input > input"]
 type_sale = [By.CSS_SELECTOR,
@@ -22,9 +20,7 @@ type_query_Name = [By.ID, "product_name"]
 type_query_class = [By.ID, "select_class_bug"]
 type_query_brand = [By.ID, "select_brand_bug"]
 type_status = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[1]/form/div[4]/div/div/div[1]/input"]
-type_status_ul = [By.CSS_SELECTOR,
-                  "body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul"]
-type_status_li = [By.XPATH, "li"]
+type_status_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_create_start_date = [By.CSS_SELECTOR,
                           "#app > div > div.main-container.hasTagsView > section > div > div.j-form > form > div:nth-child(5) > div > div > input:nth-child(2)"]
 type_create_end_date = [By.CSS_SELECTOR,
@@ -39,7 +35,6 @@ type_reset_button = [By.CSS_SELECTOR,
 type_records = [By.CSS_SELECTOR,
                 "#app > div > div.main-container.hasTagsView > section > div > div.pagination-container > div > span.el-pagination__sizes > div > div > input"]
 type_records_child = [By.CLASS_NAME, "el-select-dropdown__item"]
-type_records_li = [By.XPATH, "li"]
 type_pagination = [By.CLASS_NAME, "el-pagination"]
 type_pagination_li = [By.XPATH, "li"]
 type_prev = [By.CLASS_NAME, "btn-prev"]

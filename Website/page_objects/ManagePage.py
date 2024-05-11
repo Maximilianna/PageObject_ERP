@@ -34,14 +34,7 @@ class Manage(BasePage):
 
     # 新增商品选择商品单位
     def input_Unit(self, Unit):
-        self.click_element(type_unit)
-        sleep(0.5)
-        ul = self.find_element(type_unit_ul)
-        li = ul.find_elements(type_unit_li[0], type_unit_li[1])
-        for now in li:
-            if now.text == Unit:
-                now.click()
-                break
+        self.ul_input(Unit, type_unit, type_unit_ul)
 
     # 新增商品输入采购价格 可变参数key：1：清空原本内容
     def input_Purchase(self, purchase, *key):
@@ -87,14 +80,7 @@ class Manage(BasePage):
 
     # 查询商品选择状态
     def input_query_status(self, Status):
-        self.click_element(type_status)
-        sleep(0.5)
-        ul = self.find_element(type_status_ul)
-        li = ul.find_elements(type_status_li[0], type_status_li[1])
-        for now in li:
-            if now.text == Status:
-                now.click()
-                break
+        self.ul_input(Status, type_status, type_status_ul)
 
     # 时间格式：yyyy-MM-dd HH-mm-ss
     # 查询商品选择创建时间
@@ -117,14 +103,8 @@ class Manage(BasePage):
 
     # 设置每页显示多少条记录
     def input_records(self, value):
-        self.click_element(type_records)
-        sleep(0.5)
-        ul = self.find_elements(type_records_child)[-1].find_element(By.XPATH, "..")
-        li = ul.find_elements(type_records_li)
-        for now in li:
-            if now.text == str(value) + "条/页":
-                now.click()
-                break
+        Str = str(value) + "条/页"
+        self.ul_input(Str, type_records, type_records_child)
 
     # 在分页栏点击指定页数按钮
     def click_pagination(self, value):

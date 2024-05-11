@@ -7,7 +7,7 @@ from ddt import ddt, data, unpack
 
 @ddt
 class add_Test(TestMyUnit):
-    @data(*get_data_csv())
+    @data(*get_data_csv(f"..\\test_datas\\add_Commodity_Test.csv"))
     @unpack
     def test_add_Test(self, Name, Class, Brand, Unit, Purchase, Sale):
         Login(self.driver, "XTGLY", "123456")
