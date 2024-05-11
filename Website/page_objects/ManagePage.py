@@ -1,5 +1,5 @@
-from Website.page_object.BasePage import BasePage
-from Website.page_element.Manage import *
+from Website.page_objects.BasePage import BasePage
+from Website.page_elements.Manage import *
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 

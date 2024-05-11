@@ -1,5 +1,5 @@
-from Website.page_object.BrandPage import BrandPage
-from Website.page_object.LoginPage import Login
+from Website.page_objects.BrandPage import BrandPage
+from Website.page_objects.LoginPage import Login
 from Website.model.myunit import TestMyUnit
 from time import sleep
 

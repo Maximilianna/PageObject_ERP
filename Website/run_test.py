@@ -3,7 +3,7 @@ import time
 from HTMLTestRunner import HTMLTestRunner
 
 report_dir = 'test_report'
-test_dir = 'test_case'
+test_dir = 'test_cases'
 
 print("start run test case")
 discover = unittest.defaultTestLoader.discover(test_dir, "add_Commodity_Test.py")

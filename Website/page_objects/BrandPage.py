@@ -1,5 +1,5 @@
-from Website.page_object.BasePage import BasePage
-from Website.page_element.Brand import *
+from Website.page_objects.BasePage import BasePage
+from Website.page_elements.Brand import *
 
 
 class BrandPage(BasePage):

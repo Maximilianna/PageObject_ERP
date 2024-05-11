@@ -1,5 +1,5 @@
-from Website.page_object.BasePage import BasePage
-from Website.page_element.Login import *
+from Website.page_objects.BasePage import BasePage
+from Website.page_elements.Login import *
 
 
 class LoginPage(BasePage):

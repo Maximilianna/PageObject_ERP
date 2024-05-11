@@ -1,7 +1,7 @@
 from Website.model.myunit import TestMyUnit
 from Website.model.function import get_data_csv
-from Website.page_object.LoginPage import Login
-from Website.page_object.ManagePage import Manage
+from Website.page_objects.LoginPage import Login
+from Website.page_objects.ManagePage import Manage
 from time import sleep
 from ddt import ddt, data, unpack
 
