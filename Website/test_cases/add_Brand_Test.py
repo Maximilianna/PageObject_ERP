@@ -11,3 +11,7 @@ class add_Brand(TestMyUnit):
         sleep(5)
         brand_page.click_Brand()
         sleep(3)
+        brand_page.click_new_brand()
+        brand_page.input_brand_name("华为")
+        brand_page.click_cancel_brand()
+        sleep(3)
