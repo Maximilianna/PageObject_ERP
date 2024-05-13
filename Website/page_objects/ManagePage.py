@@ -25,8 +25,8 @@ class Manage(BasePage):
         e.send_keys(name)
 
     # 新增商品选择商品分类
-    def input_Class(self, Class):
-        self.select_element(type_add_class, Class)
+    def input_category(self, Class):
+        self.select_element(type_add_category, Class)
 
     # 新增商品选择商品品牌
     def input_Brand(self, Brand):
@@ -71,8 +71,8 @@ class Manage(BasePage):
         self.input_element(type_query_Name, Name)
 
     # 查询商品选择商品分类
-    def input_query_class(self, Price):
-        self.select_element(type_query_class, Price)
+    def input_query_category(self, Price):
+        self.select_element(type_query_category, Price)
 
     # 查询商品选择商品品牌
     def input_query_brand(self, Brand):
@@ -104,14 +104,12 @@ class Manage(BasePage):
     # 设置每页显示多少条记录
     def input_records(self, value):
         Str = str(value) + "条/页"
-        self.ul_input(Str, type_records, type_records_child)
+        self.ul_input(Str, type_records, type_records_ul)
 
     # 在分页栏点击指定页数按钮
     def click_pagination(self, value):
-        ul = self.find_element(type_pagination).find_element(By.XPATH, "ul")
-        li = ul.find_elements(type_pagination_li[0],
-                              type_pagination_li[1])
-        for now in li:
+        ul = self.find_elements(type_pagination)
+        for now in ul:
             if now.text == str(value):
                 now.click()
                 break
@@ -124,29 +122,23 @@ class Manage(BasePage):
     def click_next(self):
         self.click_element(type_next)
 
-    # 在分页栏点击快速向前
-    def click_pagination_prev(self):
-        current = self.find_element(type_pagination_current)
-        ul = self.find_element(type_pagination).find_element(By.XPATH, "ul")
-        li = ul.find_elements(type_pagination_li[0],
-                              type_pagination_li[1])
-        if int(current.text) > int(li[0].text) + 3:
-            li[1].click()
-
     # 在分页栏点击快速向后
-    def click_pagination_next(self):
-        current = self.find_element(type_pagination_current)
-        ul = self.find_element(type_pagination).find_element(By.XPATH, "ul")
-        li = ul.find_elements(type_pagination_li[0],
-                              type_pagination_li[1])
-        if int(current.text) < int(li[-1].text) - 3:
-            li[7].click()
+    def click_quick_next(self):
+        self.click_quick(type_pagination_current,
+                         type_pagination_entirety,
+                         type_quick_next, 1)
+
+    # 在分页栏点击快速向前
+    def click_quick_prev(self):
+        self.click_quick(type_pagination_current,
+                         type_pagination_entirety,
+                         type_quick_prev, -1)
 
     # 通过跳转器进行页面跳转 可变参数*key：1：自动回车   0：不回车   默认回车
     def input_pagination_editor(self, value, *key):
-        editor = self.find_element(type_pagination_editor)
+        editor = self.find_element(type_pagination_entirety)
         editor.clear()
-        if key[0] != 0:
+        if key[0] != 0 and len(key) != 0:
             editor.send_keys(value, Keys.ENTER)
         elif key == 0 or len(key) == 0:
             editor.send_keys(value)

@@ -41,3 +41,20 @@ class BrandPage(BasePage):
     # 查询商品品牌，点击查询按钮
     def click_query_brand(self):
         self.click_element(type_query_brand)
+
+    # 页面跳转器
+    def input_records(self, value):
+        Str = str(value) + "条/页"
+        self.ul_input(Str, type_records, type_records_ul)
+
+    # 在分页栏点击快速向后
+    def click_quick_next(self):
+        self.click_quick(type_pagination_current,
+                         type_pagination_entirety,
+                         type_quick_next, 1)
+
+    # 在分页栏点击快速向前
+    def click_quick_prev(self):
+        self.click_quick(type_pagination_current,
+                         type_pagination_entirety,
+                         type_quick_prev, -1)

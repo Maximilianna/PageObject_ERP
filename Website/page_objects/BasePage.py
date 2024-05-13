@@ -66,3 +66,15 @@ class BasePage(object):
                     break
         except:
             traceback.print_exc()
+
+    def click_quick(self, current, index, click, key):
+        current = self.find_element(current)
+        if key == -1:
+            prev = self.find_elements(index)[0]
+            if int(current.text) >= int(prev.text) + 4:
+                self.click_element(click)
+        elif key == 1:
+            next = self.find_elements(index)[-1]
+            if int(current.text) <= int(next.text) - 4:
+                self.click_element(click)
+

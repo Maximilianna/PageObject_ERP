@@ -14,7 +14,7 @@ class add_Test(TestMyUnit):
         manage_page = Manage(self.driver)
         manage_page.click_new()
         manage_page.input_Name(Name)
-        manage_page.input_Class(Class)
+        manage_page.input_category(Class)
         manage_page.input_Brand(Brand)
         manage_page.input_Unit(Unit)
         manage_page.input_Purchase(Purchase)
