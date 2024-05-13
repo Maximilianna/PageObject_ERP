@@ -1,7 +1,5 @@
 from selenium.webdriver.support.select import Select
 from Website.page_elements.Base import *
-from time import sleep
-import traceback
 
 
 class BasePage(object):
@@ -37,44 +35,3 @@ class BasePage(object):
 
     def alert_dismiss(self):
         self.driver.switch_to.alert.dismiss()
-
-    def close_labels(self, *labelName):
-        labels = self.find_elements(type_labels)
-        for label in labels:
-            if len(labels) < 2:
-                print("标签页小于2页，无法关闭！")
-                break
-            if type(labelName[0]) == str and label.text == labelName[0]:
-                label.find_element(type_label[0], type_label[1]).click()
-                break
-            elif label.text == self.label_name():
-                label.find_element(type_label[0], type_label[1]).click()
-                break
-
-    # 需要继承类重写
-    def label_name(self):
-        return ""
-
-    def ul_input(self, str, input, ul):
-        self.click_element(input)
-        sleep(0.5)
-        ul = self.find_elements(ul)
-        try:
-            for now in ul:
-                if now.get_attribute("textContent") == str:
-                    now.click()
-                    break
-        except:
-            traceback.print_exc()
-
-    def click_quick(self, current, index, click, key):
-        current = self.find_element(current)
-        if key == -1:
-            prev = self.find_elements(index)[0]
-            if int(current.text) >= int(prev.text) + 4:
-                self.click_element(click)
-        elif key == 1:
-            next = self.find_elements(index)[-1]
-            if int(current.text) <= int(next.text) - 4:
-                self.click_element(click)
-

@@ -1,10 +1,8 @@
-from Website.page_objects.BasePage import BasePage
+from Website.page_objects.ManageDataPage import ManageDataPage
 from Website.page_elements.Manage import *
-from selenium.webdriver.common.keys import Keys
-from time import sleep
 
 
-class Manage(BasePage):
+class Manage(ManageDataPage):
 
     def label_name(self):
         return "商品管理"
@@ -106,14 +104,6 @@ class Manage(BasePage):
         Str = str(value) + "条/页"
         self.ul_input(Str, type_records, type_records_ul)
 
-    # 在分页栏点击指定页数按钮
-    def click_pagination(self, value):
-        ul = self.find_elements(type_pagination)
-        for now in ul:
-            if now.text == str(value):
-                now.click()
-                break
-
     # 点击上一页按钮
     def click_prev(self):
         self.click_element(type_prev)
@@ -122,26 +112,14 @@ class Manage(BasePage):
     def click_next(self):
         self.click_element(type_next)
 
-    # 在分页栏点击快速向后
-    def click_quick_next(self):
-        self.click_quick(type_pagination_current,
-                         type_pagination_entirety,
-                         type_quick_next, 1)
-
-    # 在分页栏点击快速向前
-    def click_quick_prev(self):
-        self.click_quick(type_pagination_current,
-                         type_pagination_entirety,
-                         type_quick_prev, -1)
-
     # 通过跳转器进行页面跳转 可变参数*key：1：自动回车   0：不回车   默认回车
-    def input_pagination_editor(self, value, *key):
-        editor = self.find_element(type_pagination_entirety)
-        editor.clear()
-        if key[0] != 0 and len(key) != 0:
-            editor.send_keys(value, Keys.ENTER)
-        elif key == 0 or len(key) == 0:
-            editor.send_keys(value)
+    # def input_pagination_editor(self, value, *key):
+    #     editor = self.find_element(type_pagination_entirety)
+    #     editor.clear()
+    #     if key[0] != 0 and len(key) != 0:
+    #         editor.send_keys(value, Keys.ENTER)
+    #     elif key == 0 or len(key) == 0:
+    #         editor.send_keys(value)
 
     # 点击修改按钮
     def click_data_modify(self, index):

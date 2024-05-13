@@ -1,9 +1,8 @@
-from Website.page_objects.BasePage import BasePage
+from Website.page_objects.ManageDataPage import ManageDataPage
 from Website.page_elements.Brand import *
-from time import sleep
 
 
-class BrandPage(BasePage):
+class BrandPage(ManageDataPage):
 
     def label_name(self):
         return "商品品牌"
@@ -46,15 +45,3 @@ class BrandPage(BasePage):
     def input_records(self, value):
         Str = str(value) + "条/页"
         self.ul_input(Str, type_records, type_records_ul)
-
-    # 在分页栏点击快速向后
-    def click_quick_next(self):
-        self.click_quick(type_pagination_current,
-                         type_pagination_entirety,
-                         type_quick_next, 1)
-
-    # 在分页栏点击快速向前
-    def click_quick_prev(self):
-        self.click_quick(type_pagination_current,
-                         type_pagination_entirety,
-                         type_quick_prev, -1)

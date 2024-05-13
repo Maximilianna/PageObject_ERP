@@ -12,7 +12,4 @@ type_query_brand_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_query_brand = [By.XPATH, "//i[@class=\"el-icon-search\"]/.."]
 type_records = [By.CSS_SELECTOR, ".el-input.el-input--mini.el-input--suffix > .el-input__inner"]
 type_records_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
-type_pagination_current = [By.CSS_SELECTOR, ".number.active"]
-type_pagination_entirety = [By.CSS_SELECTOR, ".number"]
-type_quick_next = [By.CLASS_NAME, "btn-quicknext"]
-type_quick_prev = [By.CLASS_NAME, "btn-quickprev"]
+

@@ -35,13 +35,8 @@ type_reset_button = [By.CSS_SELECTOR,
 type_records = [By.CSS_SELECTOR,
                 "#app > div > div.main-container.hasTagsView > section > div > div.pagination-container > div > span.el-pagination__sizes > div > div > input"]
 type_records_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
-type_pagination = [By.CSS_SELECTOR, ".el-pager > li"]
 type_prev = [By.CLASS_NAME, "btn-prev"]
 type_next = [By.CLASS_NAME, "btn-next"]
-type_pagination_current = [By.CSS_SELECTOR, ".number.active"]
-type_pagination_entirety = [By.CSS_SELECTOR, ".number"]
-type_quick_next = [By.CLASS_NAME, "btn-quicknext"]
-type_quick_prev = [By.CLASS_NAME, "btn-quickprev"]
 type_data_modify_start = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[3]/div[4]/div[2]/table/tbody/tr["]
 type_data_modify_end = [By.XPATH, "]/td[13]/div/button[1]"]
 type_date_disable_open_start = [By.XPATH,
