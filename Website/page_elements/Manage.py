@@ -32,11 +32,6 @@ type_modify_end_date = [By.CSS_SELECTOR,
 type_query_button = [By.ID, "product_query"]
 type_reset_button = [By.CSS_SELECTOR,
                      "#app > div > div.main-container.hasTagsView > section > div > div.mb8.el-row > div:nth-child(2) > button"]
-type_records = [By.CSS_SELECTOR,
-                "#app > div > div.main-container.hasTagsView > section > div > div.pagination-container > div > span.el-pagination__sizes > div > div > input"]
-type_records_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
-type_prev = [By.CLASS_NAME, "btn-prev"]
-type_next = [By.CLASS_NAME, "btn-next"]
 type_data_modify_start = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[3]/div[4]/div[2]/table/tbody/tr["]
 type_data_modify_end = [By.XPATH, "]/td[13]/div/button[1]"]
 type_date_disable_open_start = [By.XPATH,

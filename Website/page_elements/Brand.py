@@ -10,6 +10,4 @@ type_query_brand_name = [By.CSS_SELECTOR, ".el-form-item__content >.el-input > .
 type_query_brand_status = [By.CSS_SELECTOR, ".el-form-item__content > .el-select >.el-input > .el-input__inner"]
 type_query_brand_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_query_brand = [By.XPATH, "//i[@class=\"el-icon-search\"]/.."]
-type_records = [By.CSS_SELECTOR, ".el-input.el-input--mini.el-input--suffix > .el-input__inner"]
-type_records_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 

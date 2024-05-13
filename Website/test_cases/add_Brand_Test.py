@@ -23,5 +23,6 @@ class add_Brand(TestMyUnit):
         brand_page.click_quick("next")
         sleep(1)
         brand_page.click_quick("prev")
-        #brand_page.click_number(5)
+        sleep(1)
+        brand_page.click_number(5)
         sleep(3)

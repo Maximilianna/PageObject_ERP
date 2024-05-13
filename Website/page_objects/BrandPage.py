@@ -1,8 +1,8 @@
-from Website.page_objects.ManageDataPage import ManageDataPage
+from Website.page_objects.MessagePage import MessagePage
 from Website.page_elements.Brand import *
 
 
-class BrandPage(ManageDataPage):
+class BrandPage(MessagePage):
 
     def label_name(self):
         return "商品品牌"
@@ -40,8 +40,3 @@ class BrandPage(ManageDataPage):
     # 查询商品品牌，点击查询按钮
     def click_query_brand(self):
         self.click_element(type_query_brand)
-
-    # 页面跳转器
-    def input_records(self, value):
-        Str = str(value) + "条/页"
-        self.ul_input(Str, type_records, type_records_ul)
