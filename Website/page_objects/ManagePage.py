@@ -2,7 +2,7 @@ from Website.page_objects.MessagePage import MessagePage
 from Website.page_elements.Manage import *
 
 
-class Manage(MessagePage):
+class ManagePage(MessagePage):
 
     def label_name(self):
         return "商品管理"
@@ -11,42 +11,29 @@ class Manage(MessagePage):
     def click_Spgl(self):
         self.click_element(type_Manage)
 
-    # 点击新增按钮
-    def click_new(self):
-        self.click_element(type_new)
-
-    # 新增商品输入商品名 可变参数key：1：清空原本内容
-    def input_Name(self, name, *key):
-        e = self.find_element(type_add_name)
-        if len(key) != 0 and key[0] != 0:
-            e.clear()
-        e.send_keys(name)
+    # 新增商品输入商品名字
+    def input_add_name(self, name):
+        self.input_element(type_name, name)
 
     # 新增商品选择商品分类
     def input_category(self, Class):
-        self.select_element(type_add_category, Class)
+        self.select_element(type_category, Class)
 
     # 新增商品选择商品品牌
     def input_Brand(self, Brand):
-        self.select_element(type_add_brand, Brand)
+        self.select_element(type_brand, Brand)
 
     # 新增商品选择商品单位
     def input_Unit(self, Unit):
         self.ul_input(Unit, type_unit, type_unit_ul)
 
-    # 新增商品输入采购价格 可变参数key：1：清空原本内容
-    def input_Purchase(self, purchase, *key):
-        e = self.find_element(type_purchase)
-        if len(key) != 0 and key[0] != 0:
-            e.clear()
-        e.send_keys(purchase)
+    # 新增商品输入采购价格
+    def input_add_Purchase(self, purchase):
+        self.input_element(type_purchase, purchase)
 
-    # 新增商品输入销售价格 可变参数key：1：清空原本内容
-    def input_Sale(self, sale, *key):
-        e = self.find_element(type_sale)
-        if len(key) != 0 and key[0] != 0:
-            e.clear()
-        e.send_keys(sale)
+    # 新增商品输入销售价格
+    def input_add_Sale(self, sale):
+        self.input_element(type_sale, sale)
 
     # 新增商品上传图片
     def input_file(self, fileAdd):
@@ -91,32 +78,17 @@ class Manage(MessagePage):
         self.input_element(type_modify_start_date, startDate)
         self.input_element(type_modify_end_date, endDate)
 
-    # 查询商品点击查询按钮
-    def click_query_button(self):
-        self.click_element(type_query_button)
+    # 修改商品，输入商品名字
+    def click_modify_name(self, name):
+        self.find_element(type_name).clear()
+        self.input_add_name(name)
 
-    # 查询商品点击重置按钮
-    def click_reset_button(self):
-        self.click_element(type_reset_button)
+    # 修改商品，输入商品采购价格
+    def click_modify_Purchase(self, purchase):
+        self.find_element(type_purchase).clear()
+        self.input_add_Purchase(purchase)
 
-    # 点击修改按钮
-    def click_data_modify(self, index):
-        type_data_modify_start[1] = (type_data_modify_start[1]
-                                     + str(index)
-                                     + type_data_modify_end[1])
-        self.click_element(type_data_modify_start)
-
-    # 点击禁用或启用按钮
-    def click_disable_open(self, index):
-        type_date_disable_open_start[1] = (type_date_disable_open_start[1]
-                                           + str(index)
-                                           + type_date_disable_open_end[1])
-        self.click_element(type_date_disable_open_start)
-
-    # 确定禁用或启用
-    def click_disable_open_accept(self):
-        self.alert_accept()
-
-    # 取消禁用或启用
-    def click_disable_open_dismiss(self):
-        self.alert_dismiss()
+    # 修改商品，输入商品采购价格
+    def click_modify_Sale(self, sale):
+        self.find_element(type_sale).clear()
+        self.input_add_Sale(sale)

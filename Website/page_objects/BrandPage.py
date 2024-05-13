@@ -11,10 +11,6 @@ class BrandPage(MessagePage):
     def click_Brand(self):
         self.click_element(type_brand)
 
-    # 点击新增按钮
-    def click_new_brand(self):
-        self.click_element(type_new_brand)
-
     # 新增商品品牌，输入品牌名
     def input_add_brand_name(self, brandName):
         self.input_element(type_add_brand_name, brandName)
@@ -37,6 +33,7 @@ class BrandPage(MessagePage):
                       type_query_brand_status,
                       type_query_brand_ul)
 
-    # 查询商品品牌，点击查询按钮
-    def click_query_brand(self):
-        self.click_element(type_query_brand)
+    # 修改商品品牌，输入品牌名字
+    def input_modify_brand_name(self, brandName):
+        self.find_element(type_modify_brand_name).clear()
+        self.input_add_brand_name(brandName)

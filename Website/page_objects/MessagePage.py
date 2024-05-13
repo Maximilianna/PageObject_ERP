@@ -6,6 +6,15 @@ import traceback
 
 
 class MessagePage(LabelsPage):
+    def click_new(self):
+        self.click_element(type_new)
+
+    def click_query(self):
+        self.click_element(type_query)
+
+    def click_reset(self):
+        self.click_element(type_reset)
+
     def ul_input(self, Options, Input_Location, li_Location):
         self.click_element(Input_Location)
         sleep(0.5)
@@ -35,11 +44,9 @@ class MessagePage(LabelsPage):
     def click_quick_prev(self):
         self.click_quick("prev")
 
-    # 点击上一页按钮
     def click_prev(self):
         self.click_element(type_prev)
 
-    # 点击下一页按钮
     def click_next(self):
         self.click_element(type_next)
 
@@ -61,3 +68,17 @@ class MessagePage(LabelsPage):
     def input_records(self, value):
         Str = str(value) + "条/页"
         self.ul_input(Str, type_records, type_records_li)
+
+    def click_data_modify(self, index):
+        type_data_modify[1] = type_data_modify[1].replace("nth-child( )", f"nth-child({index})")
+        self.click_element(type_data_modify)
+
+    def click_data_switch(self, index):
+        type_data_switch[1] = type_data_switch[1].replace("nth-child( )", f"nth-child({index})")
+        self.click_element(type_data_switch)
+
+    def data_switch_accept(self):
+        self.alert_accept()
+
+    def data_switch_dismiss(self):
+        self.alert_dismiss()
