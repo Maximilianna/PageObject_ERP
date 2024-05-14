@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 
-type_Manage = [By.LINK_TEXT, "商品管理"]
 type_name = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(1) > .el-form-item__content > .el-col > .el-input > input"]
 type_category = [By.ID, "select_add_class_bug"]
@@ -12,9 +11,7 @@ type_purchase = [By.CSS_SELECTOR,
 type_sale = [By.CSS_SELECTOR,
              ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(6) > .el-form-item__content > .el-col > .el-input > input"]
 type_file = [By.NAME, "file"]
-type_save = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(1)"]
-type_saveNew = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(2)"]
-type_cancel = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(3)"]
+type_saveNew = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialog-footer > button:nth-child(2) > span"]
 type_query_Name = [By.ID, "product_name"]
 type_query_category = [By.ID, "select_class_bug"]
 type_query_brand = [By.ID, "select_brand_bug"]

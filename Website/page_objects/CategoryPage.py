@@ -3,5 +3,6 @@ from Website.page_elements.Category import *
 
 
 class CategoryPage(MessagePage):
-    def click_Category(self):
-        self.click_element(type_Category)
+
+    def Page_name(self):
+        return "商品分类"

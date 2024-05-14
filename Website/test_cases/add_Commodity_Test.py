@@ -19,5 +19,5 @@ class add_Test(TestMyUnit):
         manage_page.input_Unit(Unit)
         manage_page.input_add_Purchase(Purchase)
         manage_page.input_add_Sale(Sale)
-        manage_page.click_SaveNew_button()
+        manage_page.click_SaveNew()
         sleep(3)

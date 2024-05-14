@@ -12,10 +12,10 @@ class LabelsPage(BasePage):
             if type(labelName[0]) == str and label.text == labelName[0]:
                 label.find_element(type_label[0], type_label[1]).click()
                 break
-            elif label.text == self.label_name():
+            elif label.text == self.Page_name():
                 label.find_element(type_label[0], type_label[1]).click()
                 break
 
     # 需要继承类重写
-    def label_name(self):
+    def Page_name(self):
         return ""

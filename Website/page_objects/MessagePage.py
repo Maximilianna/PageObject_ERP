@@ -15,10 +15,10 @@ class MessagePage(LabelsPage):
     def click_reset(self):
         self.click_element(type_reset)
 
-    def ul_input(self, Options, Input_Location, li_Location):
+    def ul_input(self, Options, Input_Location):
         self.click_element(Input_Location)
         sleep(0.5)
-        li = self.find_elements(li_Location)
+        li = self.find_elements(type_li)
         try:
             for now in li:
                 if now.get_attribute("textContent") == Options:
@@ -67,7 +67,7 @@ class MessagePage(LabelsPage):
 
     def input_records(self, value):
         Str = str(value) + "条/页"
-        self.ul_input(Str, type_records, type_records_li)
+        self.ul_input(Str, type_records)
 
     def click_data_modify(self, index):
         type_data_modify[1] = type_data_modify[1].replace("nth-child( )", f"nth-child({index})")
@@ -82,3 +82,26 @@ class MessagePage(LabelsPage):
 
     def data_switch_dismiss(self):
         self.alert_dismiss()
+
+    def click_save(self):
+        self.click_element(type_save_button)
+
+    def click_cancel(self):
+        self.click_element(type_cancel_button)
+
+    def input_add_name(self, Name):
+        self.input_element(type_name, Name)
+
+    def input_modify_name(self, Name):
+        self.find_element(type_name).clear()
+        self.input_add_name(Name)
+
+    def into_page(self):
+        type_into_page[1] = self.Page_name()
+        self.click_element(type_into_page)
+
+    def input_query_name(self, Name):
+        self.input_element(type_query_name, Name)
+
+    def input_query_status(self, Option):
+        self.ul_input(Option, type_query_status)

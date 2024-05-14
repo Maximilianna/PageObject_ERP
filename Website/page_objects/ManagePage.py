@@ -4,12 +4,8 @@ from Website.page_elements.Manage import *
 
 class ManagePage(MessagePage):
 
-    def label_name(self):
+    def Page_name(self):
         return "商品管理"
-
-    # 点击商品管理按钮
-    def click_Manage(self):
-        self.click_element(type_Manage)
 
     # 新增商品输入商品名字
     def input_add_name(self, name):
@@ -39,17 +35,9 @@ class ManagePage(MessagePage):
     def input_file(self, fileAdd):
         self.input_element(type_file, fileAdd)
 
-    # 新增商品点击保存按钮
-    def click_Save_button(self):
-        self.click_element(type_save)
-
     # 新增商品点击保存并新增按钮
-    def click_SaveNew_button(self):
+    def click_SaveNew(self):
         self.click_element(type_saveNew)
-
-    # 新增商品点击取消按钮
-    def click_Cancel_button(self):
-        self.click_element(type_cancel)
 
     # 查询商品输入商品编号或商品名
     def input_query_name(self, Name):
