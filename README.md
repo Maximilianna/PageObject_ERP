@@ -24,6 +24,7 @@ PageObject_ERP
 │  │  └─ add_Commodity_Test.py
 │  ├─ test_datas
 │  │  └─ add_Commodity_Test.csv
+│  ├─ test_report
 │  └─ run_test.py
 └─ README.md
 ```

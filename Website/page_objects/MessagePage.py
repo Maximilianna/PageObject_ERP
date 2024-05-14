@@ -1,7 +1,7 @@
 from Website.page_objects.LabelsPage import LabelsPage
 from selenium.webdriver.common.keys import Keys
 from time import sleep
-from Website.page_elements.Base import *
+from Website.page_elements.Message import *
 import traceback
 
 

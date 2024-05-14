@@ -1,5 +1,4 @@
 from selenium.webdriver.support.select import Select
-from Website.page_elements.Base import *
 
 
 class BasePage(object):

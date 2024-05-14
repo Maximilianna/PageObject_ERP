@@ -1,5 +1,5 @@
 from Website.page_objects.BasePage import BasePage
-from Website.page_elements.Base import *
+from Website.page_elements.Labels import *
 
 
 class LabelsPage(BasePage):

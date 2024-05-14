@@ -8,7 +8,7 @@ class ManagePage(MessagePage):
         return "商品管理"
 
     # 点击商品管理按钮
-    def click_Spgl(self):
+    def click_Manage(self):
         self.click_element(type_Manage)
 
     # 新增商品输入商品名字
