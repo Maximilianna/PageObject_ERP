@@ -11,6 +11,8 @@ class add_WareHouse(TestMyUnit):
         sleep(2)
         warehouse_page.click_new()
         sleep(1)
-        warehouse_page.input_add_name("仓库11")
-
+        warehouse_page.input_add_name("仓库14")
+        warehouse_page.input_Commissioner(14)
+        warehouse_page.input_PhoneNumber("15142113182")
+        warehouse_page.input_Address("辽宁省沈阳市沈北新区建设南一路")
         sleep(5)

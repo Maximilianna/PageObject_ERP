@@ -21,7 +21,7 @@ class ManagePage(MessagePage):
 
     # 新增商品选择商品单位
     def input_Unit(self, Unit):
-        self.ul_input(Unit, type_unit, type_unit_ul)
+        self.ul_input(Unit, type_unit)
 
     # 新增商品输入采购价格
     def input_add_Purchase(self, purchase):

@@ -15,7 +15,8 @@ class MessagePage(LabelsPage):
     def click_reset(self):
         self.click_element(type_reset)
 
-    def ul_input(self, Options, Input_Location, Li_Location):
+    def ul_input(self, Options, Input_Location,
+                 Li_Location=type_li):
         self.click_element(Input_Location)
         sleep(0.5)
         li = self.find_elements(Li_Location)
@@ -67,7 +68,7 @@ class MessagePage(LabelsPage):
 
     def input_records(self, value):
         Str = str(value) + "条/页"
-        self.ul_input(Str, type_records, type_li)
+        self.ul_input(Str, type_records)
 
     def click_data_modify(self, index):
         type_data_modify[1] = type_data_modify[1].replace("nth-child( )", f"nth-child({index})")
@@ -104,4 +105,4 @@ class MessagePage(LabelsPage):
         self.input_element(type_query_name, Name)
 
     def input_query_status(self, Option):
-        self.ul_input(Option, type_query_status, type_li)
+        self.ul_input(Option, type_query_status)

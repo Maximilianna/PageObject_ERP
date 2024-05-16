@@ -5,7 +5,6 @@ type_name = [By.CSS_SELECTOR,
 type_category = [By.ID, "select_add_class_bug"]
 type_brand = [By.ID, "select_add_brand_bug"]
 type_unit = [By.CSS_SELECTOR, ".el-input.el-input--medium.el-input--suffix > input"]
-type_unit_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_purchase = [By.CSS_SELECTOR,
                  ".el-dialog > .el-dialog__body > .el-form > .el-form-item:nth-child(5) > .el-form-item__content > .el-col > .el-input > input"]
 type_sale = [By.CSS_SELECTOR,
