@@ -51,10 +51,6 @@ class ManagePage(MessagePage):
     def input_query_brand(self, Brand):
         self.select_element(type_query_brand, Brand)
 
-    # 查询商品选择状态
-    def input_query_status(self, Status):
-        self.ul_input(Status, type_status, type_status_ul)
-
     # 时间格式：yyyy-MM-dd HH-mm-ss
     # 查询商品选择创建时间
     def input_create_date(self, startDate, endDate):

@@ -15,8 +15,6 @@ type_saveNew = [By.CSS_SELECTOR, ".el-dialog__body + .el-dialog__footer > .dialo
 type_query_Name = [By.ID, "product_name"]
 type_query_category = [By.ID, "select_class_bug"]
 type_query_brand = [By.ID, "select_brand_bug"]
-type_status = [By.XPATH, "/html/body/div[1]/div/div[2]/section/div/div[1]/form/div[4]/div/div/div[1]/input"]
-type_status_ul = [By.CLASS_NAME, "el-select-dropdown__item"]
 type_create_start_date = [By.CSS_SELECTOR,
                           "#app > div > div.main-container.hasTagsView > section > div > div.j-form > form > div:nth-child(5) > div > div > input:nth-child(2)"]
 type_create_end_date = [By.CSS_SELECTOR,
