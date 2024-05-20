@@ -34,8 +34,8 @@ PageObject_ERP
 │  │  └─ add_Commodity_Test.csv
 │  ├─ test_report
 │  └─ run_test.py
-├─ Wiki.md
-└─ README.md
+├─ README.md
+└─ Wiki.md
 ```
 
 页面对象继承关系树
@@ -43,7 +43,7 @@ PageObject_ERP
 ```
 BasePage
 ├─ LabelsPage
-│  └─ ManageDataPage
+│  └─ MessagePage
 │    ├─ ManagePage
 │    └─ BrandPage
 └─ LoginPage
